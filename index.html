@@ -23,12 +23,21 @@
             position: absolute;
             top: 10px;
             left: 10px;
+            width: 45%;
+            height: 40%;
         }
         #bottom {
             position: absolute;
             bottom: 10px;
             left: 50%;
             transform: translateX(-50%);
+            width: 90%;
+            height: 50%;
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
         }
         img {
             width: 150px;
@@ -43,27 +52,27 @@
         setInterval(updateClock, 1000);
         window.onload = updateClock;
 
-        function refreshLinks() {
+        function refreshEmbeds() {
             document.getElementById('top-left').innerHTML = 
-                '<a href="https://app.smartsheet.com/b/publish?EQBCT=7ba3620a80e34cbbb9a42a381ddd0e46" target="_blank">First Link</a>';
+                '<iframe src="https://app.smartsheet.com/b/publish?EQBCT=7ba3620a80e34cbbb9a42a381ddd0e46"></iframe>';
             document.getElementById('bottom').innerHTML = 
-                '<a href="https://app.smartsheet.com/b/publish?EQBCT=4cdbab6c8c0940bfa17bead7f87ba8eb" target="_blank">Second Link</a>';
+                '<iframe src="https://app.smartsheet.com/b/publish?EQBCT=4cdbab6c8c0940bfa17bead7f87ba8eb"></iframe>';
         }
 
-        // Refresh the links every 10 minutes (600,000 milliseconds)
-        setInterval(refreshLinks, 600000);
+        // Refresh the embedded Smartsheet pages every 10 minutes (600,000 milliseconds)
+        setInterval(refreshEmbeds, 600000);
     </script>
 </head>
 <body>
     <div id="top-left">
-        <a href="https://app.smartsheet.com/b/publish?EQBCT=7ba3620a80e34cbbb9a42a381ddd0e46" target="_blank">First Link</a>
+        <iframe src="https://app.smartsheet.com/b/publish?EQBCT=7ba3620a80e34cbbb9a42a381ddd0e46"></iframe>
     </div>
     <h1>TS TV Launchpad</h1>
     <div id="clock"></div>
     <br><br>
     <img src="logo.png" alt="Logo">
     <div id="bottom">
-        <a href="https://app.smartsheet.com/b/publish?EQBCT=4cdbab6c8c0940bfa17bead7f87ba8eb" target="_blank">Second Link</a>
+        <iframe src="https://app.smartsheet.com/b/publish?EQBCT=4cdbab6c8c0940bfa17bead7f87ba8eb"></iframe>
     </div>
 </body>
 </html>
