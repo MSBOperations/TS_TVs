@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Territorial Safety Display</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+            position: relative;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        #clock {
+            font-size: 24px;
+            margin: 20px 0;
+        }
+        #top-left {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+        #bottom {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        img {
+            width: 150px;
+            height: auto;
+        }
+    </style>
+    <script>
+        function updateClock() {
+            const now = new Date();
+            document.getElementById('clock').innerText = now.toLocaleTimeString();
+        }
+        setInterval(updateClock, 1000);
+        window.onload = updateClock;
+
+        function refreshLinks() {
+            document.getElementById('top-left').innerHTML = 
+                '<a href="https://example.com" target="_blank">First Link</a>';
+            document.getElementById('bottom').innerHTML = 
+                '<a href="https://another-example.com" target="_blank">Second Link</a>';
+        }
+
+        // Refresh the links every 10 minutes (600,000 milliseconds)
+        setInterval(refreshLinks, 600000);
+    </script>
+</head>
+<body>
+    <div id="top-left">
+        <a href="https://example.com" target="_blank">First Link</a>
+    </div>
+    <h1>Welcome to My GitHub Page</h1>
+    <div id="clock"></div>
+    <br><br>
+    <img src="logo.png" alt="Logo">
+    <div id="bottom">
+        <a href="https://another-example.com" target="_blank">Second Link</a>
+    </div>
+</body>
+</html>
